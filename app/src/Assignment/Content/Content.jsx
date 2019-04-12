@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
 import DataStatus from "../Content/DataStatusComponent";
 
 const styles = theme => ({
@@ -36,20 +34,7 @@ class Content extends Component {
     const { data } = this.props;
     return (
       <div className={classes.root}>
-        <Grid container md={10} spacing={24}>
-          {data &&
-            Object.keys(data).map((value, key) => {
-              if (value !== "RefreshTime") {
-                return (
-                  <Grid item md={4}>
-                    <Paper>
-                      <DataStatus name={value} dataStatus={data[value]} />
-                    </Paper>
-                  </Grid>
-                );
-              }
-            })}
-        </Grid>
+        <DataStatus data={data} />
       </div>
     );
   }

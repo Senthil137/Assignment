@@ -43,7 +43,7 @@
       ]
     },
     {
-      "name": "Google Analytics",
+      "name": "Omniture",
       "statusByDate": [
         {
           "status": "Complete",
@@ -84,7 +84,7 @@
       ]
     },
     {
-      "name": "Google Analytics",
+      "name": "Sparrow",
       "statusByDate": [
         {
           "status": "Complete",
@@ -127,7 +127,7 @@
   ],
   "adDelivery": [
     {
-      "name": "Google Analytics",
+      "name": "Google DTP",
       "statusByDate": [
         {
           "status": "Complete",
@@ -168,7 +168,7 @@
       ]
     },
     {
-      "name": "Google Analytics",
+      "name": "MOAT",
       "statusByDate": [
         {
           "status": "Complete",
@@ -209,7 +209,7 @@
       ]
     },
     {
-      "name": "Google Analytics",
+      "name": "DoubleClick",
       "statusByDate": [
         {
           "status": "Complete",
@@ -252,7 +252,7 @@
   ],
   "consumerMarketing": [
     {
-      "name": "Google Analytics",
+      "name": "CDS Global",
       "statusByDate": [
         {
           "status": "Complete",
@@ -293,7 +293,7 @@
       ]
     },
     {
-      "name": "Google Analytics",
+      "name": "Acxiom",
       "statusByDate": [
         {
           "status": "Complete",
@@ -334,7 +334,7 @@
       ]
     },
     {
-      "name": "Google Analytics",
+      "name": "Bing",
       "statusByDate": [
         {
           "status": "Complete",
