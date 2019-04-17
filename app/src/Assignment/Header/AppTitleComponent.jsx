@@ -1,8 +1,12 @@
 import React from "react";
-//import Box from "@material-ui/core/Box";
 
 const AppTitle = props => {
-  return <h1> {props.title}</h1>;
+  return (
+    <div>
+      <h3>{props.name}</h3>
+      <h1> {props.title}</h1>
+    </div>
+  );
 };
 
 export default AppTitle;

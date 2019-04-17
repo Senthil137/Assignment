@@ -1,35 +1,39 @@
 import React from "react";
-import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import DisplayByDate from "./DisplayByDateComponent";
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: "black"
-  },
-  paper: {
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
-    textAlign: "center",
-    color: theme.palette.text.secondary
-  }
-});
-//dataStatus={data[value]
 const DataStatus = props => {
-  const { data } = props;
+  const { data, classes } = props;
   return (
-    <Grid container md={10} spacing={24}>
+    <Grid
+      container
+      wrap="nowrap"
+      md={12}
+      ls={12}
+      xs={12}
+      spacing={0}
+      zeroMinWidth
+    >
       {data &&
-        Object.keys(data).map((value, key) => {
+        Object.keys(data).map(value => {
           if (value !== "RefreshTime") {
             return (
-              <Grid item md={4}>
-                <Paper>
-                  {console.log("value=>", value)}
-                  <AnalyticsData name={value} dataStatus={data[value]} />
-                </Paper>
+              <Grid
+                item
+                md={4}
+                ls={4}
+                xs={12}
+                spacing={0}
+                zeroMinWidth
+                wrap="nowrab"
+              >
+                <AnalyticsData
+                  classes={classes}
+                  name={value}
+                  dataStatus={data[value]}
+                />
               </Grid>
             );
           }
@@ -38,40 +42,39 @@ const DataStatus = props => {
   );
 };
 const AnalyticsData = props => {
-  const { dataStatus } = props;
+  const { dataStatus, classes } = props;
   return (
     <Paper>
+      <Typography
+        variant="h4"
+        style={{
+          backgroundColor: "#282c34",
+          color: "#f89406",
+          borderBottom: "1px solid",
+          padding: "15px"
+        }}
+      >
+        {props.name}
+      </Typography>
       {dataStatus &&
         Object.values(dataStatus).map((status, key) => {
           return (
             <>
-              <Typography varient="h5" component="h3">
+              <Typography
+                variant="h6"
+                id="tableTitle"
+                style={{ backgroundColor: "grey", color: "white" }}
+              >
                 {status.name}
               </Typography>
-              <Typography component="div">
-                <Typography component="div">
-                  {displayStatusbyDate(status.statusByDate)}
-                </Typography>
-              </Typography>
+              <DisplayByDate
+                classes={classes}
+                statusByDate={status.statusByDate}
+              />
             </>
           );
         })}
     </Paper>
   );
 };
-
-function displayStatusbyDate(statusByDate) {
-  let data;
-  return (
-    statusByDate &&
-    statusByDate.map((byDate, index) => {
-      return (
-        <>
-          <span key={index}>{byDate.status}</span>
-          <span>{byDate.date}</span>
-        </>
-      );
-    })
-  );
-}
-export default withStyles(styles)(DataStatus);
+export default DataStatus;
